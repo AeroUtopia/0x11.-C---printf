@@ -1,88 +1,46 @@
-.\" _printf man page /usr/share/man/man3/printf.3
-.\"
-.TH _PRINTF 3 "15-03-2021" "0.1" "Holberton _printf"
-
+.\" Manpage for SemaandYaf.
+.\" Contact .me or gio in to correct errors or typos.
+.TH man 3 "17 may 2022" "1.0" "_printf man page"
 .SH NAME
-_printf
-
-.B_printf - format and print data. Part of a project at Holberton School.
-
+.B _printf
+- Formatted output conversion
 .SH SYNOPSIS
-Part of a project at holberton school.
-This project mimics the printf found in in C.
+.B #include "main.h"
 
-_printf FORMAT [ARGUMENT]...
-.ss
+.B int _printf(const char *format, ...);
 
+.B int opFunction(int cont, va_list list, typedate tipos[], const char *format);
 .SH DESCRIPTION
+The printf() functions produce the output according to the format we need.
 
-_printf() the function produces output according to format string that \
-specifies how subsequent arguments are written and converted to stdout, the \
-standard output stream.
+.B
+Return value
 
-_printf() will loop through the format for a conversion specifier (%). If found\
-, it will access an array of structures and match the corresponding character \
-with the given function. The specified function will return a string-converted \
-version of the result and immediately passed into the buffer.
+Upon successful return, these functions return the number of characters printed (excluding the null byte used to end output to strings).
 
-.SH CONVERSION SPECIFIERS
+.B 
+conversion specifiers:
 
-.IP %s
-prints a string.
-.IP %c
-prints a character.
-.IP %d
-prints an integer. Same as %i.
-.IP %i
-See %d.
-.IP %u
-Prints unsigned int.
-.IP %o
-Converts unsigned int to octal.
-.IP %x
-Converts unsigned int to hexadecimal (lowercase)
-.IP %X
-Converts unsigned int to hexadecimal (uppercase)
-.IP %r
-Prints reverse of intput string
-.IP %R
-Converts string to rot13
+c:
+The function prints a character, it can be entered in ASCCI format in the range of> = 32 and 127 <= which are the printable ranges within the function.
+
+s:
+Receive as an argument a char pointer or array string that does not include the null termination, in case a NULL is sent it will print (null).
+
+%:
+If the next sign is equal to the percent sign then% will be printed in that case.
+
+d and i:
+Convert the parameter number to a base number 10, return 0 if the argument is empty.
 
 .SH OPTIONS
-
-Pending
-
-.SH FORMAT
-controls the output as in C printf.  Interpreted sequences are:
-
-       \n     new line
-
-       \t     tab
-
-       %%     a single %
-
-.SS Example
-.RS
-_printf("Hello %s", "world");
-Prints string "Hello world"
-
-_printf("They call me mad, but one day when history of France is written, they \
-will mark my name well ...%s ", "Sidney Applebaum")
-
-.RE
-
-.SS Return Value
-Upon success, these main function will return the number of characters printed.
-
-.SH "SEE ALSO"
-.SH ""
-
-.BR printf(1)
-
-.P
-
+others
+.SH SEE ALSO
+printf(3)
 .SH BUGS
-Memory issues are known to frequent this function. User beware.
-
-.SH "AUTHOR"
-Semachew Fasika and Yafet Gashaw
+No known bugs.
+.SH AUTHOR
+Semachew Fasika
+.I (https://github.com/AeroUtopia/printf) 
+and Yafet Gashaw 
+.I (https:/github.com/Yafet12108)
